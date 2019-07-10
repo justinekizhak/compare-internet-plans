@@ -5,10 +5,8 @@
 </script>
 
 
-<div class="font-display antialiased">
+<div class="font-display antialiased h-screen bg-black">
     <Header/>
-    <div class="p-8">
-      <Contents/>
-    </div>
+    <Contents/>
     <Footer/>
 </div>
