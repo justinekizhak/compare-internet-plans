@@ -1,15 +1,10 @@
 <script>
-  import { fly } from 'svelte/transition';
-  import { fade } from 'svelte/transition';
-  let menu_visible=false;
+  import { menu_visible } from './stores.js';
 
   function showMenu() {
-    menu_visible = true;
+    menu_visible.set(true);
   }
 
-  function hideMenu() {
-    menu_visible = false;
-  }
 </script>
 
 <style>
@@ -20,7 +15,6 @@
     @apply text-white;
   }
 </style>
-
 
 
 
@@ -37,7 +31,7 @@
           </path>
         </svg>
       </div>
-      <span class="font-semibold text-l sm:text-xl md:text-2xl ">Justine Kizhakkinedath</span>
+      <span class="font-semibold text-l sm:text-xl md:text-2xl ">Justine kizhakkinedath</span>
     </div>
     <div class="block">
       <button on:click={showMenu} class="flex items-center px-3 py-2 border text-gray-300 border-gray-500 hover:text-white hover:border-white">
@@ -50,48 +44,3 @@
     </div>
   </nav>
 </div>
-
-
-
-
-
-
-
-
-{#if menu_visible}
-  <div transition:fade="{{ duration: 500 }}">
-    <div class="fixed top-0 h-full w-full bg-black ">
-      <div transition:fly="{{ x: 200, duration: 2000 }}">
-
-        <div class="flex flex-col md:flex-row p-auto">
-          <div class="m-8 mb-4 md:mt-12 md:m-16">
-        <button on:click={hideMenu}>
-          <div class="flex w-12 h-12 md:w-16 md:h-16 fill-current text-gray-600 hover:text-white">
-            <svg width="100%"
-              height="100%" viewBox="0 0 1000 1000" version="1.1" xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/"
-              style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
-              <path
-                  d="M500,0c275.958,0 500,224.042 500,500c0,275.958 -224.042,500 -500,500c-275.958,0 -500,-224.042 -500,-500c0,-275.958 224.042,-500 500,-500Zm0,30c259.4,0 470,210.6 470,470c0,259.4 -210.6,470 -470,470c-259.4,0 -470,-210.6 -470,-470c0,-259.4 210.6,-470 470,-470Z"
-                  />
-              <path d="M241.906,736.881l21.213,21.213l494.975,-494.975l-21.213,-21.213l-494.975,494.975Z" />
-              <path d="M758.094,736.881l-21.213,21.213l-494.975,-494.975l21.213,-21.213l494.975,494.975Z" />
-              </svg>
-          </div>
-        </button>
-        </div>
-
-        <div class="m-8 mt-4 md:mt-8 text-3xl md:text-4xl lg:text-5xl xl:text-6xl flex ">
-        <ul class="flex-col">
-          <li><a class="text-gray-600 hover:text-white" href="#">Home</a></li>
-          <li><a class="text-gray-600 hover:text-white" href="#">Portfolio</a></li>
-          <li><a class="text-gray-600 hover:text-white" href="#">About</a></li>
-          <li><a class="text-gray-600 hover:text-white" href="#">Contacts</a></li>
-        </ul>
-        </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-{/if}

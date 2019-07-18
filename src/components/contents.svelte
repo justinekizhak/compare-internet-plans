@@ -1,5 +1,6 @@
 <script>
   import FormBlock from './formBlock.svelte';
+  import { fade } from 'svelte/transition';
   let numbers=2;
 
   function addCol() {
@@ -40,7 +41,7 @@
 
   <div class="p-auto overflow-auto flex flex-col sm:flex-row h-full">
     {#each { length: numbers } as _, i}
-        <span class="border w-full sm:min-w-1/2"><FormBlock/></span>
+        <span transition:fade="{{ duration:500 }}" class="border w-full sm:min-w-1/2"><FormBlock/></span>
     {/each}
   </div>
 
