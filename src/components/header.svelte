@@ -81,7 +81,7 @@
         </button>
         </div>
 
-        <div class="m-8 mt-4 md:mt-8 text-3xl md:text-4xl flex ">
+        <div class="m-8 mt-4 md:mt-8 text-3xl md:text-4xl lg:text-5xl xl:text-6xl flex ">
         <ul class="flex-col">
           <li><a class="text-gray-600 hover:text-white" href="#">Home</a></li>
           <li><a class="text-gray-600 hover:text-white" href="#">Portfolio</a></li>
