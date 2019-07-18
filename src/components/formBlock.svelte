@@ -1,4 +1,5 @@
 <script>
+  import InputBlock from './inputBlock.svelte';
 	let fup_speed=0;
 	let fup_data_limit_input=0;
 	let post_fup_speed=0;
@@ -17,11 +18,12 @@
 		value_for_money = max_data_use / plan_cost;
 	}
 
+
 </script>
 
 <style>
   input {
-    @apply p-2 w-full border my-2
+    @apply p-2 w-full border my-2 text-gray-700
   }
 </style>
 
@@ -29,10 +31,32 @@
   <h1 class="px-2 pb-4">Internet plan details</h1>
 
   <div class="flex-col">
-    <input bind:value={fup_speed} placeholder="This is fup speed">
-    <input bind:value={fup_data_limit_input} placeholder="This is fup data limit">
-    <input bind:value={post_fup_speed} placeholder="This is post fup speed">
-    <input bind:value={plan_cost} placeholder="This is plan cost">
-    <span class="block mt-2 px-2 pt-2"> Value for money: {value_for_money} </span>
+
+
+  <InputBlock>
+    <span slot="label">FUP speed</span>
+    <span slot="input"><input type="number" bind:value={fup_speed} placeholder="Enter FUP speed" ></span>
+  </InputBlock>
+
+  <InputBlock>
+    <span slot="label">FUP data limit</span>
+    <span slot="input"><input type="number" bind:value={fup_data_limit_input} placeholder="Enter FUP data limit">
+    </span>
+  </InputBlock>
+
+  <InputBlock>
+    <span slot="label">Post FUP speed</span>
+    <span slot="input"><input type="number" bind:value={post_fup_speed} placeholder="Enter post FUP speed" >
+    </span>
+  </InputBlock>
+
+  <InputBlock>
+    <span slot="label">Plan cost</span>
+    <span slot="input"><input type="number" bind:value={plan_cost} placeholder="Enter plan cost" ></span>
+  </InputBlock>
+
+  <span class="block mt-2 px-2 pt-2"> Value for money:
+   <span class="text-gray-700"> {value_for_money}</span>
+  </span>
   </div>
 </div>
