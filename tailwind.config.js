@@ -135,7 +135,7 @@ module.exports = {
                 '"Segoe UI Symbol"',
                 '"Noto Color Emoji"',
             ],
-            display: ['Futura' ,'"Jost*"', 'sans-serif'],
+            display: ['"Jost*"', 'sans-serif'],
         },
         fontSize: {
             xs: '0.75rem',
